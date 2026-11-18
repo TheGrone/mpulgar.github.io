@@ -1,6 +1,6 @@
 /* ==========================================================================
-   PORTAFOLIO MATÍAS PULGAR - ESTILOS MODERNOS Y RESPONSIVOS
-   Soporte Completo para Modo Oscuro y Modo Claro
+   PORTAFOLIO MATÍAS PULGAR SALINAS - ESTILOS COMPLETOS Y RESPONSIVOS
+   Soporte Completo para Modo Oscuro/Claro, Visor de CV y Mockup Móvil
    ========================================================================== */
 
 /* --- VARIABLES DE COLOR & TEMA --- */
@@ -8,11 +8,11 @@
     /* Paleta Modo Oscuro (Por Defecto) */
     --bg-primary: #090d16;
     --bg-secondary: #0f172a;
-    --bg-card: rgba(17, 24, 39, 0.75);
-    --bg-card-hover: rgba(30, 41, 59, 0.85);
+    --bg-card: rgba(17, 24, 39, 0.78);
+    --bg-card-hover: rgba(30, 41, 59, 0.9);
     --bg-card-solid: #111827;
     --border-color: rgba(255, 255, 255, 0.09);
-    --border-color-hover: rgba(56, 189, 248, 0.4);
+    --border-color-hover: rgba(56, 189, 248, 0.45);
     
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
@@ -23,10 +23,11 @@
     --accent-secondary: #818cf8;     /* Índigo */
     --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
     --accent-gradient-hover: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+    --cv-gradient: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%);
     
     --tag-bg: rgba(56, 189, 248, 0.12);
     --tag-color: #38bdf8;
-    --nav-bg: rgba(9, 13, 22, 0.82);
+    --nav-bg: rgba(9, 13, 22, 0.85);
     
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
@@ -43,11 +44,11 @@
 body.light-theme {
     --bg-primary: #f8fafc;
     --bg-secondary: #f1f5f9;
-    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-card: rgba(255, 255, 255, 0.9);
     --bg-card-hover: #ffffff;
     --bg-card-solid: #ffffff;
     --border-color: rgba(0, 0, 0, 0.08);
-    --border-color-hover: rgba(2, 132, 199, 0.4);
+    --border-color-hover: rgba(2, 132, 199, 0.45);
     
     --text-primary: #0f172a;
     --text-secondary: #475569;
@@ -58,10 +59,11 @@ body.light-theme {
     --accent-secondary: #6366f1;
     --accent-gradient: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
     --accent-gradient-hover: linear-gradient(135deg, #0369a1 0%, #4f46e5 100%);
+    --cv-gradient: linear-gradient(135deg, #e11d48 0%, #ea580c 100%);
     
     --tag-bg: rgba(2, 132, 199, 0.08);
     --tag-color: #0284c7;
-    --nav-bg: rgba(248, 250, 252, 0.85);
+    --nav-bg: rgba(248, 250, 252, 0.88);
     
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
@@ -207,6 +209,35 @@ a {
     transform: translateY(-2px);
 }
 
+.btn-cv {
+    background: var(--cv-gradient);
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3);
+}
+
+.btn-cv:hover {
+    box-shadow: 0 6px 20px rgba(244, 63, 94, 0.45);
+    transform: translateY(-2px);
+}
+
+.btn-cv-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    background: var(--cv-gradient);
+    color: #ffffff !important;
+    transition: var(--transition);
+}
+
+.btn-cv-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.4);
+}
+
 .btn-secondary {
     background: var(--bg-card);
     color: var(--text-primary);
@@ -230,6 +261,11 @@ a {
     border-color: var(--accent-primary);
     color: var(--accent-primary);
     transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.82rem;
 }
 
 .btn-lg {
@@ -286,12 +322,12 @@ a {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 1.75rem;
+    gap: 1.5rem;
 }
 
 .nav-link {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 500;
     transition: var(--transition);
     position: relative;
@@ -319,7 +355,7 @@ a {
     gap: 0.75rem;
 }
 
-/* Selector Tema (Modo Oscuro / Claro) */
+/* Selector Tema */
 .theme-toggle {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -339,7 +375,6 @@ a {
     transform: rotate(15deg);
 }
 
-/* Ocultar / Mostrar icono según el tema */
 body.dark-theme .theme-toggle .sun-icon {
     display: block;
     color: #fbbf24;
@@ -419,13 +454,13 @@ body.light-theme .theme-toggle .moon-icon {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 3.6rem);
+    font-size: clamp(2.3rem, 4.8vw, 3.4rem);
     letter-spacing: -1px;
     margin-bottom: 1.25rem;
 }
 
 .hero-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: 2rem;
@@ -435,8 +470,8 @@ body.light-theme .theme-toggle .moon-icon {
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 3rem;
+    gap: 0.85rem;
+    margin-bottom: 2.8rem;
 }
 
 .hero-stats {
@@ -453,13 +488,13 @@ body.light-theme .theme-toggle .moon-icon {
 }
 
 .stat-number {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 800;
     color: var(--accent-primary);
 }
 
 .stat-label {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-secondary);
 }
 
@@ -519,7 +554,7 @@ body.light-theme .theme-toggle .moon-icon {
 .code-block {
     padding: 1.25rem;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     line-height: 1.7;
     overflow-x: auto;
 }
@@ -662,9 +697,9 @@ body.light-theme .theme-toggle .moon-icon {
     box-shadow: var(--shadow-lg);
 }
 
-/* Banner Gráfico del Proyecto */
+/* Banners Gráficos de Proyectos */
 .tarjeta-banner {
-    height: 180px;
+    height: 190px;
     width: 100%;
     position: relative;
     display: flex;
@@ -674,48 +709,52 @@ body.light-theme .theme-toggle .moon-icon {
     overflow: hidden;
 }
 
-.banner-gradient-1 {
+.banner-pymes {
     background: linear-gradient(135deg, #1e1b4b 0%, #0369a1 100%);
 }
 
-.banner-gradient-2 {
+.banner-asistencia {
     background: linear-gradient(135deg, #064e3b 0%, #1e293b 100%);
 }
 
-.banner-gradient-3 {
+.banner-android {
+    background: linear-gradient(135deg, #0f2e24 0%, #10b981 100%);
+}
+
+.banner-portfolio {
     background: linear-gradient(135deg, #31104b 0%, #0c4a6e 100%);
 }
 
 .banner-badge {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(0, 0, 0, 0.45);
+    top: 0.85rem;
+    right: 0.85rem;
+    background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(4px);
     color: #f8fafc;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 600;
     padding: 0.25rem 0.65rem;
     border-radius: var(--radius-full);
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Mockups dentro del banner */
+/* Mockups dentro del banner de escritorio */
 .banner-preview {
-    width: 85%;
-    max-width: 250px;
+    width: 88%;
+    max-width: 260px;
 }
 
 .mockup-window {
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(15, 23, 42, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     overflow: hidden;
 }
 
 .mockup-header {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.35);
     padding: 0.4rem 0.6rem;
     display: flex;
     align-items: center;
@@ -736,8 +775,11 @@ body.light-theme .theme-toggle .moon-icon {
 
 .mockup-bar {
     font-size: 0.65rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.7);
     font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .mockup-body {
@@ -745,6 +787,22 @@ body.light-theme .theme-toggle .moon-icon {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
+}
+
+.mockup-pymes-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.pymes-badge {
+    font-size: 0.62rem;
+    background: rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
 }
 
 .mockup-line {
@@ -762,8 +820,12 @@ body.light-theme .theme-toggle .moon-icon {
 .mockup-box, .mockup-card-small {
     flex: 1;
     height: 25px;
-    background: rgba(56, 189, 248, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
+}
+
+.pymes-accent {
+    background: rgba(245, 158, 11, 0.35);
 }
 
 .mockup-table {
@@ -786,6 +848,72 @@ body.light-theme .theme-toggle .moon-icon {
 .mockup-hero-shape {
     height: 16px;
     background: rgba(129, 140, 248, 0.35);
+    border-radius: 4px;
+}
+
+/* Mockup de Celular Móvil (Android) */
+.banner-preview-phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-mockup {
+    width: 110px;
+    height: 160px;
+    background: #0f172a;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding: 8px 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-notch {
+    width: 32px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    margin: 0 auto 6px;
+}
+
+.phone-screen {
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 12px;
+    flex: 1;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.phone-app-header {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #34d399;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 3px;
+}
+
+.phone-card-item {
+    height: 28px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+}
+
+.phone-card-item.small {
+    height: 18px;
+    width: 75%;
+}
+
+.phone-btn-bar {
+    margin-top: auto;
+    height: 16px;
+    background: #10b981;
     border-radius: 4px;
 }
 
@@ -870,7 +998,70 @@ body.light-theme .theme-toggle .moon-icon {
     transform: translateY(-2px);
 }
 
-/* --- SECCIÓN GUÍA HOSTING GRATIS --- */
+/* --- SECCIÓN VISOR DE CURRÍCULUM VITAE --- */
+.section-cv {
+    padding: 5rem 0;
+}
+
+.cv-wrapper-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+}
+
+.cv-actions-bar {
+    padding: 1.25rem 1.75rem;
+    background: rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cv-info-summary {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.cv-info-summary svg {
+    color: #f43f5e;
+}
+
+.cv-info-summary strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.cv-sub {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+.cv-buttons-group {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.cv-viewer-container {
+    width: 100%;
+    height: 750px;
+    background: #1e293b;
+    position: relative;
+}
+
+.cv-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- SECCIÓN GUÍA HOSTING & ANDROID GRATIS --- */
 .section-hosting {
     padding: 5rem 0;
 }
@@ -951,6 +1142,15 @@ body.light-theme .theme-toggle .moon-icon {
     flex-grow: 1;
 }
 
+.hosting-card code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent-primary);
+}
+
 .hosting-card a {
     color: var(--accent-primary);
     text-decoration: underline;
@@ -1018,6 +1218,94 @@ body.light-theme .theme-toggle .moon-icon {
     transform: translateY(-2px);
 }
 
+/* --- MODAL DE CV --- */
+.cv-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.cv-modal.active {
+    display: flex;
+}
+
+.cv-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+}
+
+.cv-modal-content {
+    position: relative;
+    z-index: 1001;
+    width: 100%;
+    max-width: 900px;
+    height: 90vh;
+    background: var(--bg-card-solid);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cv-modal-header {
+    padding: 1rem 1.5rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cv-modal-header h3 {
+    font-size: 1.1rem;
+}
+
+.cv-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.cv-modal-close {
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0 0.25rem;
+}
+
+.cv-modal-close:hover {
+    color: #ef4444;
+}
+
+.cv-modal-body {
+    flex: 1;
+    background: #0f172a;
+}
+
+.cv-modal-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 /* --- FOOTER --- */
 .footer {
     border-top: 1px solid var(--border-color);
@@ -1080,11 +1368,33 @@ body.light-theme .theme-toggle .moon-icon {
         align-items: center;
         text-align: center;
     }
+
+    .cv-actions-bar {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .cv-info-summary {
+        justify-content: center;
+    }
+
+    .cv-buttons-group {
+        justify-content: center;
+    }
+
+    .cv-viewer-container {
+        height: 500px;
+    }
 }
 
 @media (max-width: 768px) {
     .section {
         padding: 3.5rem 0;
+    }
+
+    .btn-cv-nav {
+        display: none;
     }
 
     .menu-toggle {

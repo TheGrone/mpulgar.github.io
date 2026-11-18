@@ -1,5 +1,5 @@
 // ==========================================================================
-// PORTAFOLIO MATÍAS PULGAR - INTERACTIVIDAD Y MODO OSCURO/CLARO
+// PORTAFOLIO MATÍAS PULGAR SALINAS - INTERACTIVIDAD Y FUNCIONALIDADES
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,13 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('themeToggle');
     const body = document.body;
 
-    // Verificar si hay una preferencia guardada en localStorage
     const savedTheme = localStorage.getItem('mpulgar_theme');
 
     if (savedTheme) {
         body.className = savedTheme;
     } else {
-        // Detectar si el sistema prefiere modo oscuro
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         body.className = prefersDark ? 'dark-theme' : 'light-theme';
     }
@@ -42,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.setAttribute('aria-expanded', isOpen);
         });
 
-        // Cerrar menú al hacer clic en cualquier enlace
         navLinks.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('open');
@@ -59,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remover clase activa de todos
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
@@ -69,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const category = card.getAttribute('data-category');
                 if (filterValue === 'all' || category === filterValue) {
                     card.style.display = 'flex';
-                    // Pequeña animación de entrada
                     card.style.opacity = '0';
                     card.style.transform = 'translateY(10px)';
                     setTimeout(() => {
@@ -85,7 +80,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ----------------------------------------------------
-    // 4. RESALTADO DE NAVEGACIÓN SEGÚN EL SCROLL
+    // 4. MODAL DEL CURRÍCULUM VITAE (CV)
+    // ----------------------------------------------------
+    const openCvBtn = document.getElementById('openCvModalBtn');
+    const closeCvBtn = document.getElementById('closeCvModalBtn');
+    const cvModalCloseBackdrop = document.getElementById('cvModalCloseBackdrop');
+    const cvModal = document.getElementById('cvModal');
+
+    function openModal() {
+        if (cvModal) {
+            cvModal.classList.add('active');
+            cvModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+        }
+    }
+
+    function closeModal() {
+        if (cvModal) {
+            cvModal.classList.remove('active');
+            cvModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = ''; // Restablece scroll
+        }
+    }
+
+    if (openCvBtn) openCvBtn.addEventListener('click', openModal);
+    if (closeCvBtn) closeCvBtn.addEventListener('click', closeModal);
+    if (cvModalCloseBackdrop) cvModalCloseBackdrop.addEventListener('click', closeModal);
+
+    // Cerrar modal al presionar Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && cvModal && cvModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    // ----------------------------------------------------
+    // 5. RESALTADO DE NAVEGACIÓN SEGÚN EL SCROLL
     // ----------------------------------------------------
     const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-link');
