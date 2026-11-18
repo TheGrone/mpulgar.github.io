@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matías Pulgar | Desarrollador de Software & Web</title>
+    <meta name="description" content="Portafolio profesional de Matías Pulgar. Desarrollador Web y Software especializado en React, TypeScript, Python y soluciones modernas." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="dark-theme">
+    <!-- Fondo decorativo con gradientes sutiles -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Barra de Navegación -->
+    <header class="navbar-wrapper">
+        <nav class="navbar">
+            <a href="#inicio" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>MP<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
+                <span class="logo-name">Matias<span class="highlight">Pulgar</span></span>
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#habilidades" class="nav-link">Habilidades</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#hosting-gratis" class="nav-link">Demos Gratis</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+
+            <div class="nav-actions">
+                <!-- Botón de Modo Oscuro / Claro -->
+                <button id="themeToggle" class="theme-toggle" aria-label="Cambiar modo oscuro o claro" title="Cambiar tema">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Menú hamburguesa para móvil -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN HERO -->
+        <section class="hero-section" id="inicio">
+            <div class="contenedor hero-grid">
+                <div class="hero-content">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        <span>Disponible para proyectos & desarrollo</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Hola, soy <span class="text-gradient">Matías Pulgar</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        Desarrollador de <strong>Software & Web</strong>. Creo soluciones digitales elegantes, rápidas y escalables con tecnologías modernas como <strong>React</strong>, <strong>TypeScript</strong> y <strong>Python</strong>.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#proyectos" class="btn btn-primary">
+                            <span>Ver Mis Proyectos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <polyline points="19 12 12 19 5 12"></polyline>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/TheGrone" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            <span>Mi GitHub</span>
+                        </a>
+                        <a href="#contacto" class="btn btn-outline">
+                            <span>Contacto</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Proyectos Destacados</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Responsive & Rápido</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">Gratis</span>
+                            <span class="stat-label">Demos en Vivo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="code-card">
+                        <div class="code-card-header">
+                            <div class="card-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="card-title">developer.ts</span>
+                        </div>
+                        <pre class="code-block"><code><span class="token-keyword">const</span> <span class="token-variable">desarrollador</span> = {
+  <span class="token-property">nombre</span>: <span class="token-string">"Matías Pulgar"</span>,
+  <span class="token-property">rol</span>: <span class="token-string">"Fullstack & Software Dev"</span>,
+  <span class="token-property">enfoque</span>: [
+    <span class="token-string">"React / TypeScript"</span>,
+    <span class="token-string">"Python / APIs"</span>,
+    <span class="token-string">"UI Moderna & Limpia"</span>
+  ],
+  <span class="token-property">disponible</span>: <span class="token-boolean">true</span>,
+  <span class="token-method">construirProyecto</span>: () =&gt; {
+    <span class="token-keyword">return</span> <span class="token-string">"Soluciones de alto impacto"</span>;
+  }
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE HABILIDADES -->
+        <section class="section" id="habilidades">
+            <div class="contenedor">
+                <div class="section-header">
+                    <span class="section-tag">Stack Tecnológico</span>
+                    <h2 class="section-title">Habilidades & Herramientas</h2>
+                    <p class="section-subtitle">Tecnologías con las que desarrollo aplicaciones modernas, eficientes y seguras.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Frontend -->
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper frontend-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3>Frontend</h3>
+                        <p>Interfaces dinámicas, responsivas y centradas en el usuario.</p>
+                        <div class="tag-cloud">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">JavaScript (ES6+)</span>
+                            <span class="tech-tag">HTML5 / CSS3</span>
+                            <span class="tech-tag">Diseño Responsivo</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend & BD -->
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper backend-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                        </div>
+                        <h3>Backend & Datos</h3>
+                        <p>Lógica de servidor sólida, automatización y bases de datos.</p>
+                        <div class="tag-cloud">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">APIs REST</span>
+                            <span class="tech-tag">PostgreSQL / MySQL</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Herramientas -->
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper tools-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
+                        <h3>Despliegue & Flujo</h3>
+                        <p>Control de versiones, automatización y hosting gratuito de proyectos.</p>
+                        <div class="tag-cloud">
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">GitHub Pages</span>
+                            <span class="tech-tag">Vercel / Netlify</span>
+                            <span class="tech-tag">VS Code</span>
+                            <span class="tech-tag">CI/CD Básico</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PROYECTOS -->
+        <section class="section section-proyectos" id="proyectos">
+            <div class="contenedor">
+                <div class="section-header">
+                    <span class="section-tag">Portafolio</span>
+                    <h2 class="section-title">Mis Proyectos Destacados</h2>
+                    <p class="section-subtitle">Haz clic en <strong>Ver Demo</strong> para probarlos online o en <strong>Código</strong> para ver los repositorios.</p>
+                </div>
+
+                <!-- Filtros opcionales -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Web & React</button>
+                    <button class="filter-btn" data-filter="backend">Software & Backend</button>
+                </div>
+
+                <div class="grid-proyectos">
+
+                    <!-- PROYECTO 1: CVATS -->
+                    <article class="tarjeta-proyecto" data-category="web">
+                        <div class="tarjeta-banner banner-gradient-1">
+                            <div class="banner-badge">Frontend / ATS</div>
+                            <div class="banner-preview">
+                                <div class="mockup-window">
+                                    <div class="mockup-header">
+                                        <div class="mockup-dots"><span></span><span></span><span></span></div>
+                                        <div class="mockup-bar">cvats.app</div>
+                                    </div>
+                                    <div class="mockup-body">
+                                        <div class="mockup-line" style="width: 70%"></div>
+                                        <div class="mockup-line" style="width: 45%"></div>
+                                        <div class="mockup-line-group">
+                                            <div class="mockup-box"></div>
+                                            <div class="mockup-box"></div>
+                                            <div class="mockup-box"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-info">
+                            <div class="tarjeta-tags">
+                                <span class="tag-pill tag-blue">React</span>
+                                <span class="tag-pill tag-cyan">TypeScript</span>
+                                <span class="tag-pill tag-purple">Tailwind</span>
+                            </div>
+
+                            <h3 class="tarjeta-titulo">CVATS - Sistema de Gestión de CVs</h3>
+                            <p class="tarjeta-descripcion">
+                                Aplicación moderna diseñada para filtrar, categorizar y optimizar perfiles de currículum con compatibilidad ATS y visualización interactiva de candidatos.
+                            </p>
+
+                            <div class="tarjeta-actions">
+                                <a href="https://TheGrone.github.io/cvats" target="_blank" rel="noopener noreferrer" class="btn btn-card-primary" title="Abrir demo en vivo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                    <span>Ver Demo</span>
+                                </a>
+
+                                <a href="https://github.com/TheGrone/cvats" target="_blank" rel="noopener noreferrer" class="btn btn-card-secondary" title="Ver código fuente en GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                    <span>Código</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROYECTO 2: CONTROL DE ASISTENCIA -->
+                    <article class="tarjeta-proyecto" data-category="backend">
+                        <div class="tarjeta-banner banner-gradient-2">
+                            <div class="banner-badge">Software / BD</div>
+                            <div class="banner-preview">
+                                <div class="mockup-window">
+                                    <div class="mockup-header">
+                                        <div class="mockup-dots"><span></span><span></span><span></span></div>
+                                        <div class="mockup-bar">control-asistencia.local</div>
+                                    </div>
+                                    <div class="mockup-body">
+                                        <div class="mockup-table">
+                                            <div class="mockup-row header"></div>
+                                            <div class="mockup-row"></div>
+                                            <div class="mockup-row"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-info">
+                            <div class="tarjeta-tags">
+                                <span class="tag-pill tag-green">Python</span>
+                                <span class="tag-pill tag-yellow">SQL</span>
+                                <span class="tag-pill tag-blue">Data Management</span>
+                            </div>
+
+                            <h3 class="tarjeta-titulo">Control de Asistencia</h3>
+                            <p class="tarjeta-descripcion">
+                                Plataforma de gestión y registro de horas, turnos y personal con reportes analíticos, control de marcas y base de datos relacional.
+                            </p>
+
+                            <div class="tarjeta-actions">
+                                <a href="https://github.com/TheGrone/control-asistencia#readme" target="_blank" rel="noopener noreferrer" class="btn btn-card-primary" title="Ver documentación y demo del sistema">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                    <span>Ver Demo / Docs</span>
+                                </a>
+
+                                <a href="https://github.com/TheGrone/control-asistencia" target="_blank" rel="noopener noreferrer" class="btn btn-card-secondary" title="Ver repositorio en GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                    <span>Código</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROYECTO 3: PORTAFOLIO WEB -->
+                    <article class="tarjeta-proyecto" data-category="web">
+                        <div class="tarjeta-banner banner-gradient-3">
+                            <div class="banner-badge">Frontend / Responsive</div>
+                            <div class="banner-preview">
+                                <div class="mockup-window">
+                                    <div class="mockup-header">
+                                        <div class="mockup-dots"><span></span><span></span><span></span></div>
+                                        <div class="mockup-bar">mpulgar.github.io</div>
+                                    </div>
+                                    <div class="mockup-body">
+                                        <div class="mockup-hero-shape"></div>
+                                        <div class="mockup-line-group">
+                                            <div class="mockup-card-small"></div>
+                                            <div class="mockup-card-small"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-info">
+                            <div class="tarjeta-tags">
+                                <span class="tag-pill tag-purple">HTML5 / CSS3</span>
+                                <span class="tag-pill tag-cyan">Modo Oscuro</span>
+                                <span class="tag-pill tag-blue">GitHub Pages</span>
+                            </div>
+
+                            <h3 class="tarjeta-titulo">Portafolio Web Profesional</h3>
+                            <p class="tarjeta-descripcion">
+                                Sitio web interactivo, 100% responsivo con cambio instantáneo entre tema oscuro y claro, visualización de proyectos y optimización para reclutadores.
+                            </p>
+
+                            <div class="tarjeta-actions">
+                                <a href="#inicio" class="btn btn-card-primary" title="Estás en la demo actual">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>Ver Aquí</span>
+                                </a>
+
+                                <a href="https://github.com/TheGrone/mpulgar.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-card-secondary" title="Ver código de este portafolio">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                    <span>Código</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CÓMO VISUALIZAR TUS PROYECTOS GRATIS -->
+        <section class="section section-hosting" id="hosting-gratis">
+            <div class="contenedor">
+                <div class="hosting-box">
+                    <div class="hosting-header">
+                        <div class="hosting-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="section-tag">Guía Rápida</span>
+                            <h2 class="hosting-title">¿Cómo publicar tus proyectos gratis para que cualquiera los vea?</h2>
+                            <p class="hosting-desc">Tienes las mejores plataformas gratuitas del mundo para que tus demos funcionen online sin pagar un centavo:</p>
+                        </div>
+                    </div>
+
+                    <div class="hosting-grid">
+                        <div class="hosting-card">
+                            <div class="card-step-badge">Opción 1</div>
+                            <h4>GitHub Pages (100% Gratis)</h4>
+                            <p>Ideal para sitios HTML/CSS/JS o apps React. Ve a tu repositorio &gt; <strong>Settings &gt; Pages</strong> &gt; Branch: <strong>main</strong> &gt; Save. ¡Tu proyecto estará online en minutos!</p>
+                            <span class="badge-pill">Para Frontend y Portafolio</span>
+                        </div>
+
+                        <div class="hosting-card">
+                            <div class="card-step-badge">Opción 2</div>
+                            <h4>Vercel o Netlify (1 Clic)</h4>
+                            <p>Entra a <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>, conecta tu GitHub y selecciona el repositorio (ej. React/Vite/Next.js). Te da un enlace HTTPS automático gratuito.</p>
+                            <span class="badge-pill">Para React, Vite, Vue</span>
+                        </div>
+
+                        <div class="hosting-card">
+                            <div class="card-step-badge">Opción 3</div>
+                            <h4>Render / Railway (Para Python/SQL)</h4>
+                            <p>Si tu proyecto usa Python (Flask/FastAPI/Django) o base de datos, en <a href="https://render.com" target="_blank" rel="noopener">render.com</a> puedes crear un <em>Web Service</em> gratis conectado a tu GitHub.</p>
+                            <span class="badge-pill">Para Backend y APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CONTACTO -->
+        <section class="section section-contacto" id="contacto">
+            <div class="contenedor">
+                <div class="contacto-card">
+                    <span class="section-tag">Contacto Directo</span>
+                    <h2 class="contacto-title">¿Hablamos sobre un proyecto o trabajo?</h2>
+                    <p class="contacto-sub">
+                        Estoy disponible para oportunidades laborales, proyectos freelance o colaboraciones en código abierto.
+                    </p>
+
+                    <div class="contacto-items">
+                        <a href="mailto:pulgarmatias8@gmail.com" class="contacto-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>pulgarmatias8@gmail.com</span>
+                        </a>
+
+                        <a href="https://github.com/TheGrone" target="_blank" rel="noopener noreferrer" class="contacto-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            <span>github.com/TheGrone</span>
+                        </a>
+                    </div>
+
+                    <div class="contacto-cta">
+                        <a href="mailto:pulgarmatias8@gmail.com?subject=Contacto%20desde%20Portafolio" class="btn btn-primary btn-lg">
+                            <span>Envíame un Correo</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="contenedor footer-content">
+            <p>&copy; 2026 Matías Pulgar. Desarrollado con HTML5, CSS3 y JavaScript moderno.</p>
+            <div class="footer-links">
+                <a href="#inicio">Volver arriba &uarr;</a>
+                <span>&bull;</span>
+                <a href="https://github.com/TheGrone" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
