@@ -2,8 +2,7 @@
 
 Portafolio web responsivo con soporte de modo oscuro/claro, visor de currículum en PDF y catálogo interactivo de proyectos en producción.
 
-🌐 **Sitio Web en Vivo:** [https://mpulgar.github.io]([https://mpulgar.github.io](https://thegrone.github.io/mpulgar.github.io/))
----
+🌐 **Sitio Web en Vivo:** [https://mpulgar.github.io]([https://mpulgar.github.io](https://thegrone.github.io/mpulgar.github.io/))---
 
 ## 🚀 Proyectos Destacados en Producción
 
