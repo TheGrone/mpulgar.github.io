@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme) {
         body.className = savedTheme;
     } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        body.className = prefersDark ? 'dark-theme' : 'light-theme';
+        body.className = 'light-theme';
     }
 
     if (themeToggleBtn) {
@@ -139,4 +138,90 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // ----------------------------------------------------
+    // 6. BOTÓN VOLVER AL INICIO HACIA ARRIBA
+    // ----------------------------------------------------
+    const backToTopBtn = document.getElementById('backToTop');
+
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // ----------------------------------------------------
+    // 7. CHATBOT INTERACTIVO HACIA WHATSAPP
+    // ----------------------------------------------------
+    const WHATSAPP_NUMBER = '56977262607';
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const chatbotClose = document.getElementById('chatbotClose');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const chatbotForm = document.getElementById('chatbotForm');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const quickReplyBtns = document.querySelectorAll('.quick-reply-btn');
+
+    function toggleChatbot(forceState) {
+        if (!chatbotWindow) return;
+        const isOpen = typeof forceState === 'boolean'
+            ? forceState
+            : !chatbotWindow.classList.contains('open');
+        chatbotWindow.classList.toggle('open', isOpen);
+        chatbotWindow.setAttribute('aria-hidden', String(!isOpen));
+        if (isOpen && chatbotInput) {
+            setTimeout(() => chatbotInput.focus(), 150);
+        }
+    }
+
+    function appendMessageAndWhatsAppLink(userText) {
+        if (!chatbotMessages) return;
+
+        const userBubble = document.createElement('div');
+        userBubble.className = 'chat-msg user-msg';
+        userBubble.textContent = userText;
+        chatbotMessages.appendChild(userBubble);
+
+        const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(userText)}`;
+
+        const botBubble = document.createElement('div');
+        botBubble.className = 'chat-msg bot-msg';
+        botBubble.innerHTML = `¡Perfecto! Haz clic en el botón para continuar esta conversación directamente en el WhatsApp de Matías:<br><a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="whatsapp-action-link">Abrir WhatsApp &rarr;</a>`;
+        chatbotMessages.appendChild(botBubble);
+
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    if (chatbotToggle) {
+        chatbotToggle.addEventListener('click', () => toggleChatbot());
+    }
+
+    if (chatbotClose) {
+        chatbotClose.addEventListener('click', () => toggleChatbot(false));
+    }
+
+    quickReplyBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const msg = btn.getAttribute('data-msg');
+            if (msg) appendMessageAndWhatsAppLink(msg);
+        });
+    });
+
+    if (chatbotForm && chatbotInput) {
+        chatbotForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const text = chatbotInput.value.trim();
+            if (!text) return;
+            chatbotInput.value = '';
+            appendMessageAndWhatsAppLink(text);
+        });
+    }
 });

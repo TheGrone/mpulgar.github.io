@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="dark-theme">
+<body class="light-theme">
     <!-- Fondos luminosos sutiles -->
     <div class="bg-glow bg-glow-1"></div>
     <div class="bg-glow bg-glow-2"></div>
@@ -617,6 +617,57 @@
             </div>
         </div>
     </footer>
+
+    <!-- BOTÓN VOLVER ARRIBA -->
+    <button id="backToTop" class="back-to-top" aria-label="Volver al inicio" title="Volver arriba">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- CHATBOT INTERACTIVO WHATSAPP -->
+    <div class="chatbot-wrapper" id="chatbotWrapper">
+        <div class="chatbot-window" id="chatbotWindow" aria-hidden="true">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar">🤖</div>
+                    <div>
+                        <h4>Asistente de Matías</h4>
+                        <span class="chatbot-status"><span class="status-dot"></span> Te conecta por WhatsApp</span>
+                    </div>
+                </div>
+                <button id="chatbotClose" class="chatbot-close" aria-label="Cerrar chat">&times;</button>
+            </div>
+
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chat-msg bot-msg">
+                    ¡Hola! 👋 Soy el asistente virtual de <strong>Matías Pulgar</strong>. Selecciona una opción o escribe tu consulta para enviarla directo a su WhatsApp:
+                </div>
+                <div class="chatbot-quick-replies" id="chatbotQuickReplies">
+                    <button type="button" class="quick-reply-btn" data-msg="Hola Matías, me gustaría cotizar un proyecto web o software.">💼 Cotizar proyecto</button>
+                    <button type="button" class="quick-reply-btn" data-msg="Hola Matías, te contacto por una oportunidad laboral / entrevista.">👨‍💻 Oportunidad laboral</button>
+                    <button type="button" class="quick-reply-btn" data-msg="Hola Matías, tengo una consulta sobre tus proyectos en Vercel / GitHub.">🚀 Consulta de proyectos</button>
+                </div>
+            </div>
+
+            <form class="chatbot-input-area" id="chatbotForm">
+                <input type="text" id="chatbotInput" placeholder="Escribe tu mensaje para WhatsApp..." autocomplete="off" required />
+                <button type="submit" class="chatbot-send-btn" aria-label="Enviar a WhatsApp" title="Enviar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <button id="chatbotToggle" class="chatbot-toggle" aria-label="Abrir asistente de WhatsApp" title="Chatear por WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.016-1.297-4.984-4.344-5.141-4.547-.141-.203-1.219-1.625-1.219-3.109s.766-2.203 1.047-2.5c.266-.297.594-.375.797-.375h.578c.188 0 .438-.078.688.516.25.609.859 2.094.938 2.25.078.156.125.344.016.547-.094.203-.156.328-.297.5-.156.172-.313.391-.453.516-.156.156-.313.313-.141.625.188.313.813 1.344 1.75 2.172 1.203 1.078 2.219 1.406 2.531 1.563.313.156.5.125.672-.078.188-.203.781-.906.984-1.219.203-.313.406-.266.688-.156.281.094 1.797.844 2.109 1 .313.156.516.234.594.359.078.125.078.734-.172 1.438z"/>
+            </svg>
+            <span class="chatbot-notif-dot"></span>
+        </button>
+    </div>
 
     <!-- Script JavaScript -->
     <script src="script.js"></script>
