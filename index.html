@@ -1,57 +1,3 @@
-### 1. Sobre la corrección de la captura de pantalla
-
-Quien te envió esa observación **está equivocado**: tu frase original no tiene un error gramatical, mientras que la
-supuesta "corrección" del recuadro negro introduce varios errores reales de ortografía y puntuación.
-
-* **Por qué tu frase original es gramaticalmente válida:** En *"diseñada para gestión, visualización **y** análisis de
-perfiles técnicos **y** CVs"*, cada **"y"** cierra una enumeración distinta en niveles diferentes:
-1. Acciones: *gestión, visualización **y** análisis*.
-2. Objeto del análisis: *perfiles técnicos **y** CVs*.
-
-
-* **Errores en la sugerencia de la imagen:**
-* Omite todas las tildes (*Debería, Aplicación, análisis, técnico, navegación*).
-* Usa un punto y coma después de una preposición (`para;`), lo cual es incorrecto, seguido de una mayúscula
-injustificada (`Gestion`).
-* Usa un apóstrofo anglosajón para el plural (`cv's`); en español, las siglas son invariables (*los CV*) o, en contextos
-informales, se escriben sin apóstrofo (*CVs*).
-
-
-
-Aun así, como repetir la conjunción **"y"** tan cerca puede sonar algo pesado al leer rápido, conviene reformularla para
-que fluya mejor sin perder el sentido original:
-
-> *"Aplicación para dispositivos Android diseñada para gestionar, visualizar y analizar tanto perfiles técnicos como
-currículums (CV) en movilidad, con una navegación nativa fluida."*
-
----
-
-### 2. Correcciones ortográficas y de estilo en tu HTML
-
-| Ubicación / Elemento | Texto actual | Corrección recomendada | Motivo |
-| --- | --- | --- | --- |
-| **Proyecto Sistema Pymes** | `...de Pequeñas y Medianas Empresas. Diseñada con interfaz...` | `...para la gestión, el
-control comercial y la administración de pequeñas y medianas empresas. Diseñada con una interfaz...` | En español, los
-sustantivos comunes como *pequeñas y medianas empresas* van en minúscula. |
-| **Proyecto Control de Asistencia** | `Sistema de control y registro de horas, turnos de personal y reportería...` |
-`Sistema para el control y registro de horas, gestión de turnos de personal y reportería...` | Evita la repetición
-cercana de la **"y"** y mejora la claridad de la lista. |
-| **Proyecto CV ATS** | `CVAS - Aplicación Móvil Android` / `CVAS App` | `CV ATS - Aplicación Móvil Android` / `CV ATS
-App` | Posible errata de tipeo respecto al nombre del repositorio (`cvats`). |
-| **Proyecto Portafolio** | `...100% responsivo con cambio de tema...` | `...100 % responsivo, con cambio de tema...` |
-Falta la coma explicativa después de *responsivo* y espacio antes del signo `%` según la RAE. |
-| **Sección y Modal CV** | `Currículum Vitae` / `Curriculum Vitae` | `Currículum vítae` | En español lleva tilde en
-ambas palabras (*currículum vítae*). En el modal faltaba la tilde en *Currículum*. |
-| **Navbar y Contacto** | `MatiasPulgar` / `Matias Pulgar` | `MatíasPulgar` / `Matías Pulgar` | Falta la tilde en
-*Matías*. |
-| **Títulos y subtítulos** | Uso de `&` y `fullstack` | Cambiar `&` por `y`, y escribir `full stack` | El signo `&` es
-un anglicismo innecesario en textos en español. |
-
----
-
-### 3. Código HTML corregido listo para usar
-
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -330,7 +276,8 @@ un anglicismo innecesario en textos en español. |
                     <span class="section-tag">Portafolio</span>
                     <h2 class="section-title">Mis Proyectos Destacados</h2>
                     <p class="section-subtitle">Explora los sistemas desplegados en producción en
-                        <strong>Vercel</strong> y proyectos de software.</p>
+                        <strong>Vercel</strong> y proyectos de software.
+                    </p>
                 </div>
 
                 <!-- Filtros por tipo de proyecto -->
@@ -829,5 +776,3 @@ un anglicismo innecesario en textos en español. |
 </body>
 
 </html>
-
-```
